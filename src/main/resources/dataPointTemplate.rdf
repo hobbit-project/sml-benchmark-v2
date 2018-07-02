@@ -1,0 +1,27 @@
+ <datAcron:RawPosition rdf:about="{position_uri}">
+    <datAcron:hasDirection>{position_course}</datAcron:hasDirection>
+    <datAcron:hasHeading>{position_heading}</datAcron:hasHeading>
+    <datAcron:hasSpatialFeature>
+      <opengis:Point rdf:about="{point_uri}">
+        <datAcron:hasLattitude>{point_lat}</datAcron:hasLattitude>
+        <datAcron:hasLongitude>{point_lon}</datAcron:hasLongitude>
+      </opengis:Point>
+    </datAcron:hasSpatialFeature>
+    <datAcron:hasTemporalFeature>
+      <datAcron:Instant rdf:about="{time_uri}">
+        <DUL:hasDataValue>{time_value}</DUL:hasDataValue>
+      </datAcron:Instant>
+    </datAcron:hasTemporalFeature>
+    <datAcron:refersTo>
+      <datAcron:Trajectory rdf:about="{trajectory_uri}">
+        <datAcron:refersTo>
+          <datAcron:Vessel rdf:about="{ship_uri}">
+            <datAcron:hasSpeed>{ship_speed}</datAcron:hasSpeed>
+            <datAcron:has_draught rdf:datatype="http://www.w3.org/2001/XMLSchema#int">{ship_draught}</datAcron:has_draught>
+            <datAcron:shipTypeDescription>{ship_type}</datAcron:shipTypeDescription>
+          </datAcron:Vessel>
+        </datAcron:refersTo>
+        <datAcron:hasDeparture>{trajectory_departure}</datAcron:hasDeparture>
+      </datAcron:Trajectory>
+    </datAcron:refersTo>
+  </datAcron:RawPosition>

@@ -1,0 +1,58 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix hobbit: <http://w3id.org/hobbit/vocab#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://project-hobbit.eu/sml-benchmark-v2/benchmark> a hobbit:Benchmark;
+    rdfs:label "DEBS GC 2018 Benchmark"@en;
+    rdfs:comment    "Stream machine learning benchmark v2 for the DEBS GC 2018"@en;
+    hobbit:imageName    "git.project-hobbit.eu:4567/smirnp/sml-benchmark-v2/benchmark-controller";
+    hobbit:hasAPI <http://project-hobbit.eu/sml-benchmark-v2/API>;
+    hobbit:version "v1.0"@en;
+
+    hobbit:hasParameter <http://project-hobbit.eu/sml-benchmark-v2/tuplesLimit>;
+    hobbit:hasParameter <http://project-hobbit.eu/sml-benchmark-v2/queryType>;
+    hobbit:hasParameter <http://project-hobbit.eu/sml-benchmark-v2/benchmarkTimeoutMin>;
+    
+    hobbit:measuresKPI <http://project-hobbit.eu/sml-benchmark-v2/averageLatencyMs>;
+    hobbit:measuresKPI <http://project-hobbit.eu/sml-benchmark-v2/evaluatedPairsCount>;
+    hobbit:measuresKPI <http://project-hobbit.eu/sml-benchmark-v2/systemWorkingTimeSeconds>;
+    hobbit:measuresKPI <http://project-hobbit.eu/sml-benchmark-v2/meanErrorMin>;
+    hobbit:measuresKPI <http://project-hobbit.eu/sml-benchmark-v2/averageEarlynessRate>.
+    
+<http://project-hobbit.eu/sml-benchmark-v2/tuplesLimit> a hobbit:ConfigurableParameter;
+	rdfs:label "Tuples limit (0 is unlimited)"@en;
+	rdfs:label "Tuples limit (0 is unlimited)"@en;
+    rdfs:range xsd:int;
+    hobbit:defaultValue "0"^^xsd:int.
+    
+<http://project-hobbit.eu/sml-benchmark-v2/benchmarkTimeoutMin> a hobbit:ConfigurableParameter;
+	rdfs:label "Benchmark timeout, min (0 is unlimited)"@en;
+	rdfs:label "Benchmark timeout, min (0 is unlimited)"@en;
+    rdfs:range xsd:int;
+    hobbit:defaultValue "0"^^xsd:int.    
+
+<http://project-hobbit.eu/sml-benchmark-v2/queryType> a hobbit:ConfigurableParameter, hobbit:ForwardedParameter;
+	rdfs:label "QueryType (1 - arrival port names, 2 - port names,arrival timestamps)"@en;
+	rdfs:label "Query type (1 - arrival port names, 2 - port names,arrival timestamps)"@en;
+    rdfs:range xsd:int;
+    hobbit:defaultValue "1"^^xsd:int .
+
+<http://project-hobbit.eu/sml-benchmark-v2/averageLatencyMs> a hobbit:KPI;
+    rdfs:label "Average latency, ms"@en;
+    rdfs:range xsd:int.
+    
+<http://project-hobbit.eu/sml-benchmark-v2/evaluatedPairsCount> a hobbit:KPI;
+    rdfs:label "Pairs evaluated"@en;
+    rdfs:range xsd:int.
+
+<http://project-hobbit.eu/sml-benchmark-v2/systemWorkingTimeSeconds> a hobbit:KPI;
+    rdfs:label "System working time, seconds (B)"@en;
+    rdfs:range xsd:int.
+
+<http://project-hobbit.eu/sml-benchmark-v2/averageEarlynessRate> a hobbit:KPI;
+    rdfs:label "Average earlyness rate (Q1.A)"@en;
+    rdfs:range xsd:double.
+
+<http://project-hobbit.eu/sml-benchmark-v2/meanErrorMin> a hobbit:KPI;
+    rdfs:label "Mean error (Q2.A)"@en;
+    rdfs:range xsd:double .
