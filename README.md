@@ -5,4 +5,4 @@ The 2018 DEBS Grand Challenge focuses on the application of machine learning to 
 
 Datasets are [here](https://hobbitdata.informatik.uni-leipzig.de/DEBS_GC_2018/).
 
-Sample system example compatible with the benchmark is [here](https://github.com/hobbit-project/DEBS-GC-2018).
+Find the sample [system example](https://github.com/hobbit-project/DEBS-GC-2018) and [challenge related discussions](https://github.com/hobbit-project/DEBS-GC-2018/issues).
